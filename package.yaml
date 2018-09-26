@@ -1,0 +1,59 @@
+name:                spirograph
+version:             0.1.0.0
+github:              "fredefox/spirograph"
+license:             BSD3
+author:              "Frederik Hangøj Iversen"
+maintainer:          "fhi.1990@gmail.com"
+copyright:           "2018 Frederik Hangøj Iversen"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:
+  Please see the README on GitHub at
+  <https://github.com/fredefox/spirograph#readme>
+
+default-extensions:
+  - UnicodeSyntax
+  - NamedWildCards
+  - TypeSynonymInstances
+  - FlexibleInstances
+  - FlexibleContexts
+  - ScopedTypeVariables
+  - ViewPatterns
+  - DeriveGeneric
+  - LambdaCase
+  - TypeApplications
+  - StandaloneDeriving
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - TypeFamilies
+  - MultiParamTypeClasses
+  - DerivingStrategies
+  - RecordWildCards
+
+dependencies:
+- base >= 4.7 && < 5
+- diagrams-svg
+- diagrams-lib
+- diagrams-svg
+- text
+
+executables:
+  spirograph:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - diagrams
