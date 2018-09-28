@@ -21,6 +21,11 @@ description:
   Please see the README on GitHub at
   <https://github.com/fredefox/spirograph#readme>
 
+library:
+  exposed-modules:
+    - Diagrams.Spirograph
+  source-dirs: src
+
 default-extensions:
   - UnicodeSyntax
   - NamedWildCards
@@ -39,21 +44,24 @@ default-extensions:
   - MultiParamTypeClasses
   - DerivingStrategies
   - RecordWildCards
+  - MultiWayIf
 
 dependencies:
-- base >= 4.7 && < 5
-- diagrams-svg
-- diagrams-lib
-- diagrams-svg
-- text
+  - base >= 4.7 && < 5
+  - diagrams-lib
+  - diagrams-svg
+  - text
+  - optparse-applicative
 
 executables:
   spirograph:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - diagrams
+      - spirograph
+      - diagrams-svg
+      - diagrams-lib
