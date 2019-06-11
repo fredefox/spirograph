@@ -8,7 +8,8 @@
 
 Example usage:
 
-    spirograph -w 800 -h 800 -o spirograph.svg << EOF
+    spirograph -w 800 -h 800 \
+      -o samples/pi.svg << EOF
     1 1
     1 3.14159265359
     EOF
